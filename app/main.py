@@ -2,6 +2,7 @@
 from fastapi import FastAPI
 
 from connection.database import engine
+from models.books_model import books
 
 app = FastAPI(title="Book Store",
               description="The backend of a simple BookStore webapp")
@@ -31,3 +32,8 @@ async def root() -> dict[str, str]:
         dict[str, str]: _description_
     """
     return {"Message": "The API Works"}
+
+
+@app.get("/books", name="Get all books", description="Gets all books in the database")
+async def get_all_books_endpoint():
+    _all_books = books.select()
