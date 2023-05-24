@@ -1,7 +1,7 @@
 """The main file"""
 from fastapi import FastAPI
-from connection.database import engine
 
+from connection.database import engine
 
 app = FastAPI(title="Book Store",
               description="The backend of a simple BookStore webapp")
