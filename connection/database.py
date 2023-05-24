@@ -11,6 +11,10 @@ MYSQL_DB = os.environ.get("MYSQL_DB")
 
 DATABASE_URL = f'mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@localhost:3306/{MYSQL_DB}'
 
+metadata = MetaData()
+
 engine = create_engine(DATABASE_URL)
 
-metadata = MetaData()
+metadata.create_all(engine)
+
+print("Database created successfully")
