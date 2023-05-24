@@ -13,6 +13,14 @@ async def startup_event():
     metadata.create_all(engine)
     engine.connect()
     print("Connected to Database")
+    
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """The shutdown event"""
+    print("Disconnecting from Database")
+    engine.dispose()
+    print("Disconnected from the engine")
 
 
 @app.get("/", name="Root", description="The root endpoint of the API")
