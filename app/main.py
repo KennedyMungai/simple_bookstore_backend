@@ -1,6 +1,6 @@
 """The main file"""
 from fastapi import FastAPI
-from connection.database import metadata, engine
+from connection.database import engine
 
 
 app = FastAPI(title="Book Store",
