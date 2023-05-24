@@ -1,0 +1,1 @@
+"""Created the model file for the books data"""
