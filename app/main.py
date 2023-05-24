@@ -11,7 +11,6 @@ app = FastAPI(title="Book Store",
 async def startup_event():
     """The startup event"""
     print("Connecting to Database")
-    metadata.create_all(engine)
     engine.connect()
     print("Connected to Database")
 

@@ -16,3 +16,5 @@ DATABASE_URL = f'mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYS
 metadata = MetaData()
 
 engine = create_engine(DATABASE_URL)
+
+metadata.create_all(engine)
