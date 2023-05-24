@@ -1,1 +1,4 @@
 bookstore/
+__pycache__/
+.env
+requirements.txt
