@@ -36,4 +36,5 @@ async def root() -> dict[str, str]:
 
 @app.get("/books", name="Get all books", description="Gets all books in the database")
 async def get_all_books_endpoint():
+    """An endpoint to get all the book entries from the database"""
     _all_books = books.select()
