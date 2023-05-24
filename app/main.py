@@ -6,6 +6,7 @@ from connection.database import metadata, engine
 app = FastAPI(title="Book Store",
               description="The backend of a simple BookStore webapp")
 
+
 @app.on_event("startup")
 async def startup_event():
     """The startup event"""
@@ -13,7 +14,7 @@ async def startup_event():
     metadata.create_all(engine)
     engine.connect()
     print("Connected to Database")
-    
+
 
 @app.on_event("shutdown")
 async def shutdown_event():
