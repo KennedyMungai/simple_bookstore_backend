@@ -1,5 +1,6 @@
 """Created the model file for the books data"""
-from sqlalchemy import Table, Column, Integer, String
+from sqlalchemy import Column, Integer, String, Table
+
 from connection.database import metadata
 
 books = Table(
